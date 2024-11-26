@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN= # example.com
+      - APP_PORT= # 8080
+      - HOST_IP= # 192.168.2.10
+    networks:
+      - web
+
+networks:
+  web:
